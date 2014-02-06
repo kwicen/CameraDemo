@@ -3,6 +3,7 @@ package ualberta.cmput301.camerademo;
 import ualberta.cmput301.camerodemo.R;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.app.Activity;
 import android.content.Intent;
@@ -65,14 +66,8 @@ public class CameraDemoActivity extends Activity {
 				int height = disp.getHeight();
 				Bitmap resizedBm = Bitmap.createScaledBitmap(bm, width, height, false);
 				
-				
-				
-				
-				
-				
-				
-				
-				
+				String bmPath = Environment.getExternalStorageDirectory().getAbsolutePath();
+				Intent inten = Extras(MediaStore.EXTRA_OUTPUT, bmPath); 
 				
 				
 				
