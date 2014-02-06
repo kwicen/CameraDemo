@@ -7,6 +7,7 @@ import android.provider.MediaStore;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.view.Display;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -55,6 +56,26 @@ public class CameraDemoActivity extends Activity {
 				Bitmap bm = (Bitmap) data.getExtras().getParcelable("data");
 				imageButton.setImageBitmap(bm);
 				textView.setText("Photo OK");
+				
+				
+				//Scale image here
+				
+				Display disp = getWindowManager().getDefaultDisplay();
+				int width = disp.getWidth();  
+				int height = disp.getHeight();
+				Bitmap resizedBm = Bitmap.createScaledBitmap(bm, width, height, false);
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 			} else if (resultCode == RESULT_CANCELED) {
 				textView.setText("Photo Canceled");
 			} else {
